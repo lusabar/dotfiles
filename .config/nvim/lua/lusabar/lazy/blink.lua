@@ -1,5 +1,6 @@
 return {
    "saghen/blink.cmp",
+   -- rustup is needed for +nightly option
    build = 'cargo +nightly build --release',
    -- optional: provides snippets for the snippet source
    dependencies = { 'rafamadriz/friendly-snippets' },
