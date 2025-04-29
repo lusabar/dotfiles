@@ -1,3 +1,6 @@
 [*.lua]
 indent_style = space
 indent_size = 3
+[*.jl]
+indent_style = space
+indent_size = 4
