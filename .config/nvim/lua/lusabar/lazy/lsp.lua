@@ -6,12 +6,15 @@ return {
       "williamboman/mason-lspconfig.nvim",
       "L3MON4D3/LuaSnip",
       "j-hui/fidget.nvim",
+      "saghen/blink.cmp"
    },
 
    config = function()
-      require("lspconfig").lua_ls.setup({})
-      require("lspconfig").julials.setup({})
-      require("lspconfig").texlab.setup({})
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+      require("lspconfig").lua_ls.setup({ capabilities = capabilities })
+      require("lspconfig").julials.setup({ capabilities = capabilities })
+      require("lspconfig").texlab.setup({ capabilities = capabilities })
       require("mason").setup()
       require("mason-lspconfig").setup({
       })
