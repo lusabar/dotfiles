@@ -61,3 +61,16 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # bindkey -e
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/lucas/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
+#
+function yank (){
+    cat $1 | xsel -b
+}
