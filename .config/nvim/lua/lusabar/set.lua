@@ -20,17 +20,21 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 4
 
-vim.opt.updatetime = 50 
+vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
 
+-- Enable seach highlight, but clears when pressing <Esc> on normal mode
+vim.opt.hlsearch = true
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
 -- Highlight when yanking
 vim.api.nvim_create_autocmd('TextYankPost', {
-    desc = "Highlight when yanking text",
-    group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
-    callback = function ()
-        vim.highlight.on_yank()
-    end,
+   desc = "Highlight when yanking text",
+   group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+   callback = function()
+      vim.highlight.on_yank()
+   end,
 })
