@@ -19,5 +19,12 @@ return {
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live [g]rep' })
       vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope [b]uffers' })
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope [h]elp tags' })
+      vim.keymap.set('n', '<leader>fa',
+         function()
+            builtin.find_files {
+               no_ignore = true
+            }
+         end,
+         { desc = 'Telescope [f]ind [a]ll files' })
    end
 }
