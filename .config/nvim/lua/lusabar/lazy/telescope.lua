@@ -26,5 +26,14 @@ return {
             }
          end,
          { desc = 'Telescope [f]ind [a]ll files' })
+      vim.keymap.set('n', '<leader>f~',
+         function()
+            builtin.find_files {
+               no_ignore = true,
+               hidden = true,
+               cwd = "$HOME"
+            }
+         end,
+         { desc = 'Telescope [f]ind all files in [~]' })
    end
 }
